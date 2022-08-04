@@ -53,7 +53,8 @@ func main() {
 
 	number1, number2, err := parseNumbers(input1, input2)
 	if err != nil {
-		log.Fatalln("Error", err)
+		println("Error")
+		os.Exit(1)
 	}
 
 	switch operation {
@@ -66,7 +67,7 @@ func main() {
 	case "/":
 		printSolution(number1, operation, number2, number1/number2)
 	default:
-		fmt.Printf("%+v", operation)
-		log.Fatalln("Error")
+		println("Error")
+		os.Exit(1)
 	}
 }
